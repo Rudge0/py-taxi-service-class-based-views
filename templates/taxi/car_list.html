@@ -3,8 +3,10 @@
 {% block content %}
     <h1>Cars:</h1>
   <ul>
-    {% for car in cars %}
-      <li>{{ car.model }}</li>
+    {% for car in car_list %}
+      <li>
+        <a href="{% url 'taxi:car-detail' car.id %}">{{ car.model }}</a>
+      </li>
     {% empty %}
       <li>There is no cars</li>
     {% endfor %}
